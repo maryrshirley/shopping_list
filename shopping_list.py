@@ -1,27 +1,35 @@
-shopping_list =["apple", "orange", "banana"]
+shopping_list= ["apples", "water", "yogurt", "banana"]
 
-# def add_list(a):
-# 	a= a.lower()
-# 	if a not in shopping_list:
-# 		return shopping_list.extend([x])
-# 	else:
-# 		print "item already exists in the list"
-
-# add_list("carrot")
-# # print shopping_list
-# print sorted(shopping_list)
-
-# def sorting(s):
-# 	s.sort()
-# 	return s
-# print sorting(shopping_list)
-
-def remove_item(r):
-	r= r.lower()
-	if r in shopping_list:
-		shopping_list.remove(r)
-		print r, "has been removed from your list."
-		print "Here is your new list", sorted(shopping_list)
+def add(items):
+	items= items.lower()
+	if items not in shopping_list:
+		return shopping_list.append(items)
 	else:
-		print r, "is not in your list."
-remove_item("orange")
+		print "Item already in the list"
+
+def add_multiple(items):
+	if items not in shopping_list:
+		return shopping_list.extend(items)
+	else:
+		print "Item already in the list"
+
+def sorting(items):
+	items.sort()
+	return items
+
+add_multiple(["carrots", "cake", "ice cream"])
+print shopping_list
+
+sorting(shopping_list)
+print shopping_list
+
+def remove(items):
+	items= items.lower()
+	if items not in shopping_list:
+		print "Item not in list"
+	else:
+		return shopping_list.remove(items)
+
+remove("water")
+
+print shopping_list
